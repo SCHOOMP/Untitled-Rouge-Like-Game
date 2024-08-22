@@ -11,6 +11,7 @@ func _physics_process(delta: float) -> void:
 		sprite_2d.animation = "running"
 	else:
 		sprite_2d.animation = "default"
+	#
 	
 	# Add the gravity.
 	if not is_on_floor():
