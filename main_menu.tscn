@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://busoqugepap3l"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_fmvd0"]
+[ext_resource type="Texture2D" uid="uid://b5ahtmd0q0kgw" path="res://Gray.png" id="1_t3pa4"]
+[ext_resource type="Texture2D" uid="uid://bmbxjql0f3som" path="res://cooltext464957909062358.png" id="2_ij4es"]
+[ext_resource type="AudioStream" uid="uid://dvgn4ejjym24r" path="res://Mouse Click - Sound Effect (HD).wav" id="4_scpix"]
+
+[node name="Main Menu" type="Node"]
+script = ExtResource("1_fmvd0")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_t3pa4")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -319.0
+offset_right = 308.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ij4es")
+
+[node name="Level 1" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -391.0
+offset_top = -6.0
+offset_right = -94.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 1"
+
+[node name="Level 2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -5.0
+offset_right = 353.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Level 2"
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_scpix")
+
+[connection signal="mouse_entered" from="Level 1" to="." method="_on_level_1_mouse_entered"]
+[connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]
