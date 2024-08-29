@@ -1,7 +1,7 @@
 extends RigidBody2D
 @onready var game_manager: Node = %GameManager
 var health = 2
-@export var heart : Array[Node]
+@export var heart : Array[Control]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -11,7 +11,7 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	print("Enemy took damage! Current health: ", health)
 	# Ensure we do not go out of bounds
-	for i in range(len(heart)):
+	for i in 2:
 		if i < health:
 			heart[i].show()
 		else:
