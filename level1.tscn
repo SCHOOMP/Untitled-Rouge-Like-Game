@@ -319,7 +319,8 @@ offset_bottom = 1725.0
 texture = ExtResource("1_a3ppj")
 stretch_mode = 1
 
-[node name="TileMap" type="TileMap" parent="SceneObjects"]
+[node name="TileMap" type="TileMap" parent="SceneObjects" groups=["enemies", "player_bullets"]]
+unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(3, 3)
@@ -493,14 +494,17 @@ target_level = ExtResource("7_e700y")
 
 [node name="Enemeis" type="Node" parent="."]
 
-[node name="Enemy" parent="Enemeis" instance=ExtResource("9_ftpxe")]
+[node name="Enemy" parent="Enemeis" node_paths=PackedStringArray("heart") instance=ExtResource("9_ftpxe")]
 position = Vector2(402, 594)
+heart = []
 
-[node name="Enemy2" parent="Enemeis" instance=ExtResource("9_ftpxe")]
+[node name="Enemy2" parent="Enemeis" node_paths=PackedStringArray("heart") instance=ExtResource("9_ftpxe")]
 position = Vector2(906, 440)
+heart = []
 
-[node name="Enemy3" parent="Enemeis" instance=ExtResource("9_ftpxe")]
+[node name="Enemy3" parent="Enemeis" node_paths=PackedStringArray("heart") instance=ExtResource("9_ftpxe")]
 position = Vector2(1115, 449)
+heart = []
 
 [connection signal="pressed" from="UI/pause/PausePanel/VBoxContainer/Resume" to="SceneObjects/GameManager" method="_on_resume_pressed"]
 [connection signal="pressed" from="UI/pause/PausePanel/VBoxContainer/Resume" to="UI/pause" method="_on_resume_pressed"]
