@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://yul1vpx4ewf8"]
+[gd_scene load_steps=14 format=3 uid="uid://yul1vpx4ewf8"]
 
 [ext_resource type="Texture2D" uid="uid://dt5acvksfshji" path="res://Blue.png" id="1_a3ppj"]
 [ext_resource type="Texture2D" uid="uid://b3uelptmoqgxx" path="res://Terrain (16x16).png" id="2_6ek0w"]
 [ext_resource type="Script" path="res://game_manager.gd" id="3_syxkv"]
 [ext_resource type="PackedScene" uid="uid://boy0xi83qchsl" path="res://collectable.tscn" id="4_07b16"]
+[ext_resource type="Texture2D" uid="uid://q1u6guv8j7hk" path="res://background/back.png" id="5_swgip"]
 [ext_resource type="PackedScene" uid="uid://3ywkxumiqmte" path="res://trophy.tscn" id="6_4gv4l"]
 [ext_resource type="Texture2D" uid="uid://bw5dxt2djn4dy" path="res://pngwing.com.png" id="6_cdbtb"]
 [ext_resource type="PackedScene" uid="uid://c5yqc7537x0w0" path="res://MainCharacter.tscn" id="6_samyd"]
@@ -42,11 +43,14 @@ texture = ExtResource("2_6ek0w")
 15:0/0 = 0
 15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:0/0 = 0
-17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.1748, -8, -2.97638)
+17:0/0/physics_layer_0/polygon_0/one_way = true
 18:0/0 = 0
-18:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.1748, -8, -2.97638)
+18:0/0/physics_layer_0/polygon_0/one_way = true
 19:0/0 = 0
-19:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.1748, -8, -2.97638)
+19:0/0/physics_layer_0/polygon_0/one_way = true
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
@@ -76,11 +80,14 @@ texture = ExtResource("2_6ek0w")
 15:1/0 = 0
 15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:1/0 = 0
-17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.1748, -8, -2.97638)
+17:1/0/physics_layer_0/polygon_0/one_way = true
 18:1/0 = 0
-18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.1748, -8, -2.97638)
+18:1/0/physics_layer_0/polygon_0/one_way = true
 19:1/0 = 0
-19:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.1748, -8, -2.97638)
+19:1/0/physics_layer_0/polygon_0/one_way = true
 0:2/0 = 0
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
@@ -100,11 +107,14 @@ texture = ExtResource("2_6ek0w")
 15:2/0 = 0
 15:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:2/0 = 0
-17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.1748, -8, -2.97638)
+17:2/0/physics_layer_0/polygon_0/one_way = true
 18:2/0 = 0
-18:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+18:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.1748, -8, -2.97638)
+18:2/0/physics_layer_0/polygon_0/one_way = true
 19:2/0 = 0
-19:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -3.1748, -8, -2.97638)
+19:2/0/physics_layer_0/polygon_0/one_way = true
 0:4/0 = 0
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:4/0 = 0
@@ -311,6 +321,7 @@ sources/0 = SubResource("TileSetAtlasSource_3knga")
 [node name="SceneObjects" type="Node" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="SceneObjects"]
+visible = false
 texture_filter = 1
 offset_left = -761.0
 offset_top = -1479.0
@@ -365,9 +376,20 @@ position = Vector2(2602, 424)
 [node name="Collectable10" parent="SceneObjects/Collectables group" instance=ExtResource("4_07b16")]
 position = Vector2(2602, 424)
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="SceneObjects"]
+
+[node name="Parallax2D" type="ParallaxLayer" parent="SceneObjects/ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneObjects/ParallaxBackground/Parallax2D"]
+scale = Vector2(2.77778, 2.79167)
+texture = ExtResource("5_swgip")
+centered = false
+region_rect = Rect2(288, 0, 388, 648)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_samyd")]
 texture_filter = 1
-position = Vector2(40, 113)
+position = Vector2(41, 101)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-19.823, -56.5)
@@ -423,6 +445,7 @@ texture = ExtResource("6_cdbtb")
 expand_mode = 2
 
 [node name="Heart3" type="TextureRect" parent="UI/Hearts/HBoxContainer"]
+texture_repeat = 2
 layout_mode = 2
 texture = ExtResource("6_cdbtb")
 expand_mode = 2
@@ -498,7 +521,7 @@ target_level = ExtResource("7_e700y")
 position = Vector2(402, 594)
 
 [node name="Enemy2" parent="Enemeis" instance=ExtResource("9_ftpxe")]
-position = Vector2(906, 440)
+position = Vector2(906, 451)
 
 [node name="Enemy3" parent="Enemeis" instance=ExtResource("9_ftpxe")]
 position = Vector2(1115, 449)
