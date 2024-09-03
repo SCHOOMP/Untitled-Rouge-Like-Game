@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://busoqugepap3l"]
+[gd_scene load_steps=6 format=3 uid="uid://busoqugepap3l"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_fmvd0"]
-[ext_resource type="Texture2D" uid="uid://b5ahtmd0q0kgw" path="res://Gray.png" id="1_t3pa4"]
-[ext_resource type="Texture2D" uid="uid://bmbxjql0f3som" path="res://cooltext464957909062358.png" id="2_ij4es"]
+[ext_resource type="Texture2D" uid="uid://dpibno1ebt880" path="res://backgroundgame.png" id="2_4cjj6"]
+[ext_resource type="Texture2D" uid="uid://dr7dj5dpmknm5" path="res://cooltext465457916288785.png" id="3_vhgjw"]
 [ext_resource type="AudioStream" uid="uid://dvgn4ejjym24r" path="res://Mouse Click - Sound Effect (HD).wav" id="4_scpix"]
+[ext_resource type="AudioStream" uid="uid://d33qqhvn6jw6b" path="res://All Star (from Shrek) [8 Bit Cover Tribute to Smash Mouth] - 8 Bit Universe.mp3" id="5_sbagq"]
 
 [node name="Main Menu" type="Node"]
 script = ExtResource("1_fmvd0")
@@ -15,7 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_t3pa4")
+texture = ExtResource("2_4cjj6")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -24,13 +25,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -320.0
+offset_left = -682.0
 offset_top = -319.0
-offset_right = 308.0
+offset_right = 682.0
 offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ij4es")
+texture = ExtResource("3_vhgjw")
 
 [node name="Level 1" type="Button" parent="."]
 anchors_preset = 8
@@ -65,6 +66,12 @@ text = "Level 2"
 [node name="Click" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_scpix")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-106, 5)
+stream = ExtResource("5_sbagq")
+volume_db = -27.238
+autoplay = true
 
 [connection signal="mouse_entered" from="Level 1" to="." method="_on_level_1_mouse_entered"]
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]

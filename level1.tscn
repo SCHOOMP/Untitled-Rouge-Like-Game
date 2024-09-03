@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b3uelptmoqgxx" path="res://Terrain (16x16).png" id="2_6ek0w"]
 [ext_resource type="Script" path="res://game_manager.gd" id="3_syxkv"]
 [ext_resource type="PackedScene" uid="uid://boy0xi83qchsl" path="res://collectable.tscn" id="4_07b16"]
-[ext_resource type="Texture2D" uid="uid://q1u6guv8j7hk" path="res://background/back.png" id="5_swgip"]
+[ext_resource type="AudioStream" uid="uid://cwad11o4mtd4t" path="res://retro-hurt-1-236672.mp3" id="4_m52x2"]
 [ext_resource type="PackedScene" uid="uid://3ywkxumiqmte" path="res://trophy.tscn" id="6_4gv4l"]
 [ext_resource type="Texture2D" uid="uid://bw5dxt2djn4dy" path="res://pngwing.com.png" id="6_cdbtb"]
 [ext_resource type="PackedScene" uid="uid://c5yqc7537x0w0" path="res://MainCharacter.tscn" id="6_samyd"]
@@ -344,6 +344,9 @@ unique_name_in_owner = true
 script = ExtResource("3_syxkv")
 heart = [NodePath("../../UI/Hearts/HBoxContainer/Heart"), NodePath("../../UI/Hearts/HBoxContainer/Heart2"), NodePath("../../UI/Hearts/HBoxContainer/Heart3"), NodePath("../../UI/Hearts/HBoxContainer/Heart4")]
 
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="SceneObjects/GameManager"]
+stream = ExtResource("4_m52x2")
+
 [node name="Collectables group" type="Node" parent="SceneObjects"]
 
 [node name="Collectable" parent="SceneObjects/Collectables group" instance=ExtResource("4_07b16")]
@@ -375,17 +378,6 @@ position = Vector2(2602, 424)
 
 [node name="Collectable10" parent="SceneObjects/Collectables group" instance=ExtResource("4_07b16")]
 position = Vector2(2602, 424)
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="SceneObjects"]
-
-[node name="Parallax2D" type="ParallaxLayer" parent="SceneObjects/ParallaxBackground"]
-motion_scale = Vector2(2, 2)
-
-[node name="Sprite2D" type="Sprite2D" parent="SceneObjects/ParallaxBackground/Parallax2D"]
-scale = Vector2(2.77778, 2.79167)
-texture = ExtResource("5_swgip")
-centered = false
-region_rect = Rect2(288, 0, 388, 648)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_samyd")]
 texture_filter = 1

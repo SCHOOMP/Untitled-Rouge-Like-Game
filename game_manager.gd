@@ -1,5 +1,7 @@
 extends Node
 
+@onready var hit: AudioStreamPlayer2D = $AudioStreamPlayer2D3
+
 var points = 0
 var hearts = 4
 @onready var label: Label = %Label
@@ -7,6 +9,7 @@ var hearts = 4
 
 func decrease_health():
 	hearts -= 1
+	hit.play()
 	print(hearts)
 	for i in 4:
 		if (i < hearts):
