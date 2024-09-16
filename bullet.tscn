@@ -1,21 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgvbqh67gtkt0"]
+[gd_scene load_steps=4 format=3 uid="uid://dbh6atewaahcn"]
 
-[ext_resource type="Script" path="res://bullet.gd" id="1_2nrq2"]
-[ext_resource type="Texture2D" uid="uid://4hxqwqwetg4l" path="res://bullet.png" id="1_74d08"]
+[ext_resource type="Texture2D" uid="uid://up7a41wye5uq" path="res://End (Idle).png" id="1_2vxy5"]
+[ext_resource type="Script" path="res://bullet.gd" id="1_nefwi"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lhk31"]
-radius = 8.7737
-height = 31.77
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkfdw"]
+size = Vector2(31.9647, 4)
 
-[node name="Bullet" type="Node"]
-script = ExtResource("1_2nrq2")
+[node name="Node2D" type="Area2D" groups=["player_bullets"]]
+scale = Vector2(1, 0.991518)
+script = ExtResource("1_nefwi")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0155856, 0.0218146)
-texture = ExtResource("1_74d08")
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["player_bullets"]]
+scale = Vector2(0.727475, 0.106554)
+texture = ExtResource("1_2vxy5")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player_bullets"]]
+position = Vector2(-0.0176801, 1)
+scale = Vector2(1.00221, 1)
+shape = SubResource("RectangleShape2D_vkfdw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-scale = Vector2(1.13977, 0.205995)
-shape = SubResource("CapsuleShape2D_lhk31")
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." groups=["player_bullets"]]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
