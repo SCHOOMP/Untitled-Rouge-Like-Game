@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scripts/wepons/gun.gd" id="1_j2wrs"]
 
 [node name="Gun" type="Node2D"]
+texture_repeat = 2
 rotation = 0.232129
 script = ExtResource("1_j2wrs")
 
