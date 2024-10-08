@@ -379,6 +379,19 @@ position = Vector2(2602, 424)
 [node name="Collectable10" parent="SceneObjects/Collectables group" instance=ExtResource("4_07b16")]
 position = Vector2(2602, 424)
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="SceneObjects"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="SceneObjects/ParallaxBackground"]
+position = Vector2(988, 467)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(2048, 1024)
+
+[node name="Sprite2D" type="Sprite2D" parent="SceneObjects/ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("1_a3ppj")
+region_enabled = true
+region_rect = Rect2(0, 0, 2048, 1024)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_samyd")]
 texture_filter = 1
 position = Vector2(41, 101)
