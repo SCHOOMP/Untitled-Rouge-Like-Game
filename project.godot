@@ -15,6 +15,11 @@ run/main_scene="res://scenes/menus/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Bullet="*res://scripts/wepons/bullet.gd"
+GameManager="*res://scripts/menus/game_manager.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"

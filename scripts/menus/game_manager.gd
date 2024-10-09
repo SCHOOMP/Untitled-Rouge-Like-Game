@@ -1,7 +1,6 @@
 extends Node
 
 @onready var hit: AudioStreamPlayer2D = $AudioStreamPlayer2D3
-
 var points = 0
 var hearts = 4
 @onready var label: Label = %Label
@@ -12,17 +11,18 @@ var hearts = 4
 # Define the maximum number of hearts
 @export var max_hearts: int = 4
 
+func get_points() -> int:
+	return points 
+
 func decrease_health():
 	hearts -= 1
 	hit.play()
-	print(hearts)
 	update_hearts_display()
 	if (hearts == 0):
 		get_tree().reload_current_scene()
 
 func add_points():
 	points += 1
-	print(points)
 	label.text = "Points: " + str(points)
 	check_health_increase()
 

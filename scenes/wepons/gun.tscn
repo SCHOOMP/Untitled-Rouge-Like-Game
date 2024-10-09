@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bk88wob1o3il"]
 
-[ext_resource type="Texture2D" uid="uid://bmp13p6viluj8" path="res://sprites/wepons/pngegg.png" id="1_3gwc4"]
 [ext_resource type="Script" path="res://scripts/wepons/gun.gd" id="1_j2wrs"]
+[ext_resource type="Texture2D" uid="uid://cxqiyrl3nff0n" path="res://sprites/wepons/pistol.png" id="2_vlqlt"]
 
 [node name="Gun" type="Node2D"]
 texture_repeat = 2
@@ -9,13 +9,12 @@ rotation = 0.232129
 script = ExtResource("1_j2wrs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(7.09528, -4.75993)
+position = Vector2(5.89205, -5.50306)
 rotation = -0.225819
-scale = Vector2(0.0408466, 0.0448909)
-texture = ExtResource("1_3gwc4")
+scale = Vector2(0.849, 1)
+texture = ExtResource("2_vlqlt")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(16.8801, -11.1832)
+position = Vector2(15.9069, -10.9532)
 rotation = -0.225819
 scale = Vector2(0.0408466, 0.0448909)
