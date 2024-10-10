@@ -34,7 +34,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			# Handle scenario when character is above the enemy
 			if health > 0:
 				take_damage(1)
-				print(str(health) + "from jumping")
+				print(str(health) + " damage from jumping")
 			body.jump()
 		else:
 			# Handle scenario when character is not above the enemy

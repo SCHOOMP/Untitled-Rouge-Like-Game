@@ -28,13 +28,13 @@ func add_points():
 
 func check_health_increase():
 	# Calculate how many hearts can be added based on points
-	var additional_hearts = points / points_per_heart
+	var additional_hearts = points / float(points_per_heart)  # Cast to float
 
 	# Only increase hearts if the player doesn't exceed max_hearts
-	if hearts + additional_hearts > max_hearts:
+	if hearts + int(additional_hearts) > max_hearts:  # Use int() to get the whole number
 		hearts = max_hearts
 	else:
-		hearts += additional_hearts
+		hearts += int(additional_hearts)  # Use int() to ensure we add whole hearts
 
 	# Update points to reflect the increase in health
 	points %= points_per_heart  # Reset points after gaining hearts
