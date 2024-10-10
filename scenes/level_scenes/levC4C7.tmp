@@ -392,6 +392,9 @@ texture = ExtResource("1_a3ppj")
 region_enabled = true
 region_rect = Rect2(0, 0, 2048, 1024)
 
+[node name="Enemy2" parent="SceneObjects/ParallaxBackground/ParallaxLayer/Sprite2D" instance=ExtResource("9_ftpxe")]
+position = Vector2(906, 451)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_samyd")]
 texture_filter = 1
 position = Vector2(44, 109)
@@ -528,10 +531,10 @@ target_level = ExtResource("7_e700y")
 [node name="Enemeis" type="Node" parent="."]
 
 [node name="Enemy" parent="Enemeis" instance=ExtResource("9_ftpxe")]
-position = Vector2(332, 139)
+position = Vector2(402, 594)
 
 [node name="Enemy2" parent="Enemeis" instance=ExtResource("9_ftpxe")]
-position = Vector2(896, 380)
+position = Vector2(959, 392)
 
 [node name="Enemy3" parent="Enemeis" instance=ExtResource("9_ftpxe")]
 position = Vector2(1115, 449)
