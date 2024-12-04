@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://cordxn0c0eu6k"]
+
+[ext_resource type="Texture2D" uid="uid://c2xmntqmn8751" path="res://sprites/wepons/pistol-Sheet-export.png" id="2_5f0xx"]
+
+[sub_resource type="GDScript" id="GDScript_urn16"]
+script/source = "extends Node2D
+
+var can_fire = true
+var BULLET = load(\"res://scenes/items/bullet.tscn\")
+var damage: int = 3
+@onready var muzzle: Marker2D = $Marker2D  # Attempt to find the muzzle node
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+
+func get_damage() -> int:
+	return damage
+	
+func _physics_process(delta: float) -> void:
+	var mouse_pos = get_global_mouse_position()
+	look_at(mouse_pos)
+	rotation_degrees = wrap(rotation_degrees, 0, 360)
+	if rotation_degrees > 90 and rotation_degrees < 270:
+		scale.y = -1
+	else:
+		scale.y = 1
+	
+	if Input.is_action_just_pressed(\"shoot\"):
+		var bullet_instance = BULLET.instantiate()
+		bullet_instance.global_position = muzzle.global_position
+		bullet_instance.rotation = rotation
+		bullet_instance.damage = get_damage()
+		get_tree().root.add_child(bullet_instance)
+		animation_player.play(\"shooting\")
+"
+
+[sub_resource type="Animation" id="Animation_22dqk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:vframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_ud5q6"]
+resource_name = "shooting"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:vframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ymdep"]
+_data = {
+"RESET": SubResource("Animation_22dqk"),
+"shooting": SubResource("Animation_ud5q6")
+}
+
+[node name="Gun" type="Node2D"]
+texture_repeat = 2
+rotation = 0.232129
+script = SubResource("GDScript_urn16")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(20.0296, -10.9002)
+rotation = -0.225819
+scale = Vector2(0.0408466, 0.0448909)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ymdep")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+rotation = -0.22962
+texture = ExtResource("2_5f0xx")
+hframes = 7
+frame = 1

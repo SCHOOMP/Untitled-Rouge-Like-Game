@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvgn4ejjym24r"
+path="res://.godot/imported/Mouse Click - Sound Effect (HD).wav-1d5b26af19772a3b7be5f8e28e859c7c.sample"
+
+[deps]
+
+source_file="res://sounds/menu/Mouse Click - Sound Effect (HD).wav"
+dest_files=["res://.godot/imported/Mouse Click - Sound Effect (HD).wav-1d5b26af19772a3b7be5f8e28e859c7c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
